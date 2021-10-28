@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sano y Fresco</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body>
+    {{{body}}}
+    <script src="/bootstrap.min.js"></script>
+    <script src="/jquery.min.js"></script>
+
+
+    {{!-- scripts personales, usando localStorage --}}
+    <script>
+        //definiendo constantes que se recibiran
+        const banana = 'banana';
+        const cebollas = 'cebollas';
+        const lechuga = 'lechuga';
+        const papas = 'papas';
+        const pimenton = 'pimenton';
+        const tomate = 'tomate';
+
+        //Guardando productos en localStorage 
+
+        let productos = []
+
+        if (localStorage.length === 0) {
+            localStorage.setItem('productos', JSON.stringify(productos))
+        }
+
+        //click en el producto
+        const agregar = (producto) => {
+            let productos = JSON.parse(localStorage.getItem('productos'))
+            let existe = productos.find(p => p == producto)
+            if (!existe) {
+                productos.push([producto])
+                localStorage.setItem('productos', JSON.stringify(productos))
+            }
+        }
+
+        const limpiar = () => {
+            localStorage.clear()
+            location.reload()
+        }
+
+        //Consiguiendo elementos del carrito con metodo getItem del localStorage y mostrarlo en modal 
+        $('#carrito').click(() => {
+            let prods = JSON.parse(localStorage.getItem('productos'))
+            let acum = '';
+            for (let i = 0; i < prods.length; i++) {
+                let p = prods[i]
+                const img = p[0]
+                acum += `   <div class="col-12 col-md-2 my-4">
+                                <h5>${img}</h5>
+                                <img class="px-auto" width="100%" src="/img/${img}.png">
+                           </div>
+                        `
+            }
+            //Rellenando modal
+            $('#espacio').html(acum)
+            //Mostrando con toggle el modal
+            $('#exampleModal').toggle()
+        })
+    </script>
+</body>
+
+</html>

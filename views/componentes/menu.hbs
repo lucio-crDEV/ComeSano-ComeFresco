@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-success">
+    <div class="container d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="carrito">
+           <svg xmlns="http://www.w3.org/2000/svg" width="4em" style="color:white" fill="currentColor"
+            class="bi bi-basket color-white" viewBox="0 0 16 16">
+            <path
+                d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
+        </svg>
+        </button>
+        
+    </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 70vw !important; background-color: white !important; text:center">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+            </div>
+            <div class="container"> 
+                <div class="row col-12 col-xs-12 d-flex justify-content-center" id="espacio"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="limpiar()">Limpiar</button>
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Continuar comprando</button>
+                <button type="button" class="btn btn-success" onclick="alert('Hola, estamos implementando métodos de pago!')">Pagar</button>
+            </div>
+        </div>
+    </div>
+</div>

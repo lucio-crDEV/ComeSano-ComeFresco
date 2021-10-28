@@ -1,0 +1,9 @@
+*{
+    margin:0
+}
+
+#agregarCarro:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 1s;
+}
